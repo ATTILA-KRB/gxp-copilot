@@ -1,0 +1,60 @@
+# Registre du corpus public - integrite des donnees / ALCOA+.
+# URL officielles verifiees. Champ 'agence' contraint par le schema SQL.
+# 'slug' sert de nom de fichier local (data/pdf/<slug>.pdf).
+
+documents:
+  - slug: mhra-gxp-data-integrity-2018
+    titre: "MHRA 'GXP' Data Integrity Guidance and Definitions"
+    agence: MHRA
+    reference: "Revision 1"
+    version: "2018-03"
+    date_publication: "2018-03-09"
+    url_source: "https://assets.publishing.service.gov.uk/media/5aa2b9ede5274a3e391e37f3/MHRA_GxP_data_integrity_guide_March_edited_Final.pdf"
+
+  - slug: fda-data-integrity-cgmp-qa-2018
+    titre: "Data Integrity and Compliance With Drug CGMP - Questions and Answers"
+    agence: FDA
+    reference: "FDA-2018-D-3984"
+    version: "2018-12"
+    date_publication: "2018-12-13"
+    url_source: "https://www.fda.gov/media/119267/download"
+
+  - slug: fda-part11-scope-application-2003
+    titre: "Part 11, Electronic Records; Electronic Signatures - Scope and Application"
+    agence: FDA
+    reference: "21 CFR Part 11"
+    version: "2003-08"
+    date_publication: "2003-08-01"
+    url_source: "https://www.fda.gov/media/75414/download"
+
+  - slug: pics-pi-041-1-data-integrity-2021
+    titre: "Good Practices for Data Management and Integrity in Regulated GMP/GDP Environments"
+    agence: PICS
+    reference: "PI 041-1"
+    version: "2021-07"
+    date_publication: "2021-07-01"
+    url_source: "https://picscheme.org/docview/4234"
+
+  - slug: who-trs1033-annex4-data-integrity-2021
+    titre: "WHO Guideline on Data Integrity (TRS 1033, Annex 4)"
+    agence: WHO
+    reference: "TRS 1033 Annex 4"
+    version: "2021"
+    date_publication: "2021-05-01"
+    url_source: "https://cdn.who.int/media/docs/default-source/medicines/norms-and-standards/guidelines/inspections/trs1033-annex4-guideline-on-data-integrity.pdf"
+
+  - slug: eu-gmp-annex11-computerised-systems-2011
+    titre: "EU GMP Annex 11: Computerised Systems"
+    agence: EU
+    reference: "EudraLex Vol.4 Annex 11"
+    version: "2011-06"
+    date_publication: "2011-01-01"
+    url_source: "https://health.ec.europa.eu/system/files/2016-11/annex11_01-2011_en_0.pdf"
+
+  - slug: eu-gmp-chapter4-documentation-2011
+    titre: "EU GMP Chapter 4: Documentation"
+    agence: EU
+    reference: "EudraLex Vol.4 Chapter 4"
+    version: "2011-06"
+    date_publication: "2011-01-01"
+    url_source: "https://health.ec.europa.eu/system/files/2016-11/chapter4_01-2011_en_0.pdf"

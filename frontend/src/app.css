@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+/* ---- Polices locales (equivalents Anthropic Sans / Serif) ---- */
+@font-face {
+	font-family: 'Anthropic Sans';
+	src: url('/fonts/AnthropicSans-Text-Regular-Static.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Sans';
+	src: url('/fonts/AnthropicSans-Text-RegularItalic-Static.otf') format('opentype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Sans';
+	src: url('/fonts/AnthropicSans-Text-Medium-Static.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Sans';
+	src: url('/fonts/AnthropicSans-Text-Semibold-Static.otf') format('opentype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Sans';
+	src: url('/fonts/AnthropicSans-Text-Bold-Static.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Serif';
+	src: url('/fonts/AnthropicSerif-Display-Regular-Static.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Serif';
+	src: url('/fonts/AnthropicSerif-Display-RegularItalic-Static.otf') format('opentype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Anthropic Serif';
+	src: url('/fonts/AnthropicSerif-Display-Medium-Static.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ---- Theme (palette Anthropic) ---- */
+@theme {
+	--font-sans: 'Anthropic Sans', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Anthropic Serif', Georgia, serif;
+
+	--color-ink: #141413; /* texte / fonds sombres */
+	--color-ivory: #faf9f5; /* fond clair */
+	--color-stone: #b0aea5; /* elements secondaires */
+	--color-cloud: #e8e6dc; /* fonds subtils */
+	--color-clay: #d97757; /* accent principal */
+	--color-sky: #6a9bcc; /* accent secondaire */
+	--color-moss: #788c5d; /* accent tertiaire */
+}
+
+html {
+	font-family: var(--font-sans);
+}

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Environnement / secrets
+.env
+.env.*
+!.env.example
+
+# Corpus telecharge (PDF volumineux, recuperables via sources.yaml)
+data/pdf/
+data/*.json
+
+# Outils
+.DS_Store
+*.log

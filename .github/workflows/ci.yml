@@ -1,0 +1,51 @@
+# CI Phase 0 : lint (ruff) + tests unitaires (pytest).
+# Exigence du plan (§7) : la maturite d'ingenierie se prouve des le socle.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    # Postgres + pgvector pour les tests d'integration de la recherche hybride.
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_DB: gxp_test
+          POSTGRES_USER: gxp
+          POSTGRES_PASSWORD: gxp
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      GXP_TEST_DATABASE_URL: postgresql://gxp:gxp@localhost:5432/gxp_test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installer uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dependances
+        run: uv sync --extra dev
+
+      - name: Lint (ruff)
+        run: uv run ruff check .
+
+      # 'ruff format --check' desactive : 3 fichiers existants a reformater d'abord
+      # (app/providers/cloud_mistral.py, local_ollama.py, ingestion/index.py).
+
+      - name: Tests unitaires (pytest)
+        run: uv run pytest

@@ -1,0 +1,23 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: gxp-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-gxp}
+      POSTGRES_USER: ${POSTGRES_USER:-gxp}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - gxp_pgdata:/var/lib/postgresql/data
+      # Les scripts du dossier db/ sont joues, dans l'ordre alphabetique,
+      # uniquement a la PREMIERE initialisation du volume.
+      - ./db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-gxp} -d ${POSTGRES_DB:-gxp}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  gxp_pgdata:
